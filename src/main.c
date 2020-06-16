@@ -6,7 +6,29 @@ void start_game(int min, int max)
 {
     int range[] = {min , max};
 
-    printf("You have to guess a number between %d and %d. \nAre you ready ? ", min , max);
+    printf("You have to guess a number between %d and %d.\nDo you want to change it? ", min , max);
+    if (getYorN() == 1){
+        printf("\nSet the minimum value = ");
+        scanf("%d", &min);
+        while(1){
+            printf("Set the maximum value = ");
+            scanf("%d", &max);
+            if(max > min){
+                printf("\nOkay. Guess a number between %d and %d. ", min, max);
+                range[0] = min;
+                range[1] = max;
+                break;
+            }else if(max < min){
+                printf("\nMaximum value can not be lower than minimum value.\n\n");
+            }else if(max = min){
+                printf("\nMaximum value and minimum value can not be same.\n\n");
+            }
+        }
+
+    }else{
+        printf("OK. ");
+    }
+    printf("Are you ready ? ");
     if (getYorN() != 1){
         printf("\nOK\n");
     }else{
