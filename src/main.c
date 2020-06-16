@@ -44,7 +44,7 @@ void Result(int res, int count, int min, int max){
     }else{
         printf("\n\tHa! Got it in %d step. Your number is = %d\n" , count,res);
     }
-    printf("\nThanks for playing. Want to play again ? ");
+    printf("\nThanks for playing. Want to play again ");
     int ans = getYorN();
     if (ans == 1){
         printf("\n\n");
@@ -59,8 +59,8 @@ int getYorN(){
     char c;
     while (1){
         printf("\n(y/n)--: ");
-
         if(scanf(" %c", &c) == 1){
+            fflush(stdin);
             if (c == 'Y' || c == 'y'){
                 return 1;
             }else if(c == 'n' || c == 'N'){
