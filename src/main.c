@@ -6,7 +6,7 @@ void start_game(int min, int max)
 {
     int range[] = {min , max};
 
-    printf("You have to guess a number between %d and %d.\n Are you ready ? ", min , max);
+    printf("You have to guess a number between %d and %d. \nAre you ready ? ", min , max);
     if (getYorN() != 1){
         printf("\nOK\n");
     }else{
@@ -43,6 +43,15 @@ void Result(int res, int count, int min, int max){
         printf("\n\tHa! Got it in an easy step. Your number is = %d\n" ,res);
     }else{
         printf("\n\tHa! Got it in %d step. Your number is = %d\n" , count,res);
+    }
+    printf("\nThanks for playing. Want to play again ? ");
+    int ans = getYorN();
+    if (ans == 1){
+        printf("\n\n");
+        start_game(min, max);
+    }else if (ans == 2){
+        system("cls");
+        printf("\n\t\tTHANKS FOR PLAYING.....!\n");
     }
 }
 
